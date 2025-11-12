@@ -32,7 +32,6 @@ export default function Header({
         </div>
         <div>
           <div className="text-2xl font-semibold">foo-rum</div>
-          {/* <div className="text-sm text-[color:var(--muted)]">Figma-inspired minimal feed</div> */}
         </div>
       </Link>
       <div className="flex items-center gap-4">
@@ -48,18 +47,24 @@ export default function Header({
           </div>
         ) : (
           <div className="text-black hover:font-bold">
-            <Link
-              to="/signin"
-              className="text-black "
-            >
-              Sign in
-            </Link>
-            <span>/</span>
-            <Link
-              to="/signup"
-              className="text-black hover:font-bold"
-            >
-              Sign up
+            <Link to="/signin" className="text-black flex items-center gap-6 ">
+              Login
+              <div
+                style={{
+                  width: "16px",
+                  height: "23px",
+                  border: "2px black solid",
+                  position: "relative",
+                }}
+                className="rounded-md"
+              >
+                <span
+                  className="text-black text-xl"
+                  style={{ position: "absolute", top: "-5px", left: "-20px" }}
+                >
+                  &#10140;
+                </span>
+              </div>
             </Link>
           </div>
         )}

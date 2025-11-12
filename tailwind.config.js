@@ -1,7 +1,10 @@
+const animations = require('./tailwind/animations')
+
 module.exports = {
   content: ['./index.html', './src/**/*.{ts,tsx}'],
   theme: {
     extend: {
+      ...animations.extend,
       colors: {
         brand: '#5B6CFF',
         'muted': '#6B7280'

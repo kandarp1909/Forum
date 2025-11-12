@@ -22,12 +22,10 @@ body{
   margin: 0 auto;
 }
 .card {
-  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
-  box-shadow: 0 6px 20px rgba(2,6,23,0.6);
-  border-radius: 16px;
+  background-color: white;
 }
 .content{
-  max-width: 880px;
+  max-width: 570px;
   margin-left: auto;
   margin-right: auto;
 }

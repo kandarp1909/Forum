@@ -5,9 +5,11 @@ import { Link } from "react-router-dom";
 export default function AuthForm({
   mode = "signin",
   onSuccess,
+  closeModal
 }: {
   mode?: "signin" | "signup";
   onSuccess?: () => void;
+  closeModal?: () => void;
 }) {
   const [m, setM] = useState(mode);
   const [email, setEmail] = useState("");
@@ -35,7 +37,7 @@ export default function AuthForm({
   };
 
   return (
-    <div >
+    <div className="animate-slideUp">
       <div className="flex items-center justify-between mb-4">
         <h3 className="text-lg font-semibold">
           {m === "signin" ? "Sign in" : "Create account"}
@@ -63,14 +65,12 @@ export default function AuthForm({
         />
         {error && <div className="text-sm text-red-400">{error}</div>}
         <div className="flex justify-between">
-          {/* <div className="text-sm text-[color:var(--muted)] cursor-pointer items-center">
-            Back to home
-          </div> */}
           <Link
             to="/"
-            className="text-sm text-[color:var(--muted)] cursor-pointer items-center"
+            className="text-sm text-[color:var(--muted)] cursor-pointer flex items-center justify-center"
+            onClick={closeModal}
           >
-            Back to home
+            <span> Back to home</span>
           </Link>
           <button
             className="px-4 py-2 rounded-md bg-black text-white"
